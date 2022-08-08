@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: userservice
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: localhost:80
+      config:
+        file-extension: yaml
+pattern:
+  name: 本地环境local

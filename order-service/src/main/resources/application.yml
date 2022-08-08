@@ -1,0 +1,38 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_order?useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: orderservice
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: HZ
+        namespace: c58d89e2-6f3a-4239-9ce0-55b1a344528d
+        ephemeral: false
+mybatis:
+  type-aliases-package: com.xn2001.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.xn2001: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+#eureka:
+#  client:
+#    service-url: #eureka的地址信息
+#      defaultZone: http://127.0.0.1:10086/eureka
+userservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+ribbon:
+  eager-load:
+    enabled: true
+    clients:
+       - userservice
