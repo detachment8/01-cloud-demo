@@ -1,4 +1,4 @@
-package com.xn2001.order.pojo;
+package com.sqs.feign.pojo;
 
 import lombok.Data;
 

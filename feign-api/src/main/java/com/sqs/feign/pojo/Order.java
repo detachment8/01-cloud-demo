@@ -1,6 +1,5 @@
-package com.xn2001.order.pojo;
+package com.sqs.feign.pojo;
 
-import com.sqs.feign.pojo.User;
 import lombok.Data;
 
 @Data
